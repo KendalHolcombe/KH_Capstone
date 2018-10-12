@@ -1,0 +1,34 @@
+Count: You should have 3 proposals.
+
+One where you know you can get the data:
+
+1. High level description of project? Combining FBI crime data and census data to find a correlation between crime
+rates, population, and geography. Might add employment and salary data to the mix.
+2. What question or problem are you trying to solve? Identifying the safest place(s) to live.
+3. How will you present your work: Presentation - slides, ideally to include a map showing gradient color for various
+features.
+4. What are your data sources? FBI UCR, Census Bureau, Bureau of Labor Statistics, and ...TBD
+5. What’s your next step towards making this your project? Finalizing the scope so I know where and how much data is
+needed to answer the question above.
+
+One where you think you can get the data:
+
+1. High level description of project: Partner with former employer to answer a question about their business.
+I could potentially use additional data from Zillow API to answer a broader question.
+***Former Employer: Yardi Systems is a real estate software company for context
+2. What question or problem are you trying to solve: TBD, I already have a meeting for coffee scheduled during
+“review” week.
+3. How will you present your work: Presentation - slides
+4. What are your data sources: Former employer to provide data, as well as potentially using additional data from
+Zillow API.
+5. What’s your next step towards making this your project: Will have more details after meeting for coffee.
+
+One that is a stretch for the data being obtainable(sort of):
+
+1. High level description of project: Use horse racing data to predict race winners.
+2. What question or problem are you trying to solve: Predict race winners, maybe a step further for other betting
+wagers (ex:trifecta), and maybe take it another step further to determine if there will be a Triple Crown winner or not.
+3. How will you present your work: Presentation - slides
+4. What are your data sources: API horse racing data is available from The Daily Racing Form website.
+5. What’s your next step towards making this your project: Obtaining the data and finalizing the scope of the capstone.
+I would like to look into additional data such as weather or agricultural feeds data to potentially add to the scope.
