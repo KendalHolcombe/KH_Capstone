@@ -1,0 +1,21 @@
+# KH_Capstone
+
+In recent years, advanced technology is changing the way law enforcement agencies across the globe do just about everything. Amidst the increasing number of criminal activities across the world, law enforcement agencies are using big data analytics to combat crime within minimal timelines.
+
+This trend, popularly known as predictive policing, is gaining popularity in the United States, as well as the UK and China, where the authorities are not just using data to understand past criminal activities, but are also trying to predict future crime. I want to build a model using statistical algorithms that leverages crime data in conjunction with municipal metadata to identify the safest places to live.
+
+There are several instances where law enforcement agencies are using big data analytics to predict, detect and combat criminal activities. Notably in the US, several police-led initiatives are making the most of surveillance information to identify and prevent crime. I would like to uncover a correlation between municipalities locations and crime data to determine the safest place to live based on a person's age and gender.
+
+**Presentation:**
+Using an interactive web app, the user can input a few personal details to return a sorted list of safest place to live.
+
+**Data:**
+50+ table database of FBI crime data, census data, and additional metadata
+
+One issue I encountered while gathering and compiling my data was to have a consistant feature for location information. The varying data sources used differing notations for locations, some using latitude and longitude and others using addresses. By converting these to Federal Information Processing Standards(FIPS), unique codes to identify specific geographic areas, I can homogenize the location element across all datasets.
+
+**Next Steps:**
+
+1. Exploratory Data Analysis
+2. Build a first pass model
+3. Evaluate model, determine necessary adjustments, and repeat
