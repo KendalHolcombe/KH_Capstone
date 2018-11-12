@@ -10,7 +10,7 @@ There are several instances where law enforcement agencies are using big data an
 Using an interactive web app, the user can input a few personal details to return a sorted list of safest place to live.
 
 **Data:**
-50+ table database of FBI crime data, census data, and additional metadata
+I have built a 50+ table database of FBI crime data, census data, and additional metadata
 
 One issue I encountered while gathering and compiling my data was to have a consistant feature for location information. The varying data sources used differing notations for locations, some using latitude and longitude and others using addresses. By converting these to Federal Information Processing Standards(FIPS), unique codes to identify specific geographic areas, I can homogenize the location element across all datasets.
 
