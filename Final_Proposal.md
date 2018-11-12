@@ -12,6 +12,8 @@ Using an interactive web app, the user can input a few personal details to retur
 **Data:**
 I have built a 50+ table database of FBI crime data, census data, and additional metadata
 
+![alt text](https://cdn-images-1.medium.com/max/800/1*lZrXmWJRDLqIImJThs5Lrw.png)
+
 One issue I encountered while gathering and compiling my data was to have a consistant feature for location information. The varying data sources used differing notations for locations, some using latitude and longitude and others using addresses. By converting these to Federal Information Processing Standards(FIPS), unique codes to identify specific geographic areas, I can homogenize the location element across all datasets.
 
 **Next Steps:**
