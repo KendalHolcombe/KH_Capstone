@@ -17,6 +17,9 @@ def feature_engineering(train_df, test_df):
     # Drop NA in hospital_cnt column (<2%)
     train_df.dropna(axis=0, subset=['hosp_cnt'], inplace=True)
 
+    # Drop NA in population column (<2%)
+    train_df.dropna(axis=0, subset=['population'], inplace=True)
+
     # Create Ratio Columns
     train_df['crime_pop_ratio'] = train_df['crime_cnt'] / train_df['population']
     train_df['beds_pop_ratio'] = train_df['bed_cnt'] / train_df['population']
@@ -39,6 +42,9 @@ def feature_engineering(train_df, test_df):
 
     # Drop NA in hospital_cnt column (<2%)
     test_df.dropna(axis=0, subset=['hosp_cnt'], inplace=True)
+
+    # Drop NA in population column (<2%)
+    test_df.dropna(axis=0, subset=['population'], inplace=True)
 
     # Create Ratio Columns
     test_df['crime_pop_ratio'] = test_df['crime_cnt'] / test_df['population']
