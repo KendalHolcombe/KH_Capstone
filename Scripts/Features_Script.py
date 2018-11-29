@@ -18,7 +18,10 @@ def feature_engineering(train_df, test_df):
     train_df.dropna(axis=0, subset=['hosp_cnt'], inplace=True)
 
     # Drop NA in population column (<2%)
-    train_df.dropna(axis=0, subset=['population'], inplace=True)
+    test_df.dropna(axis=0, subset=['population'], inplace=True)
+
+    # Drop Gambling Offenses from Offense_Category column (only ONE incident across entire dataframe)
+    train_df = train_df[train_df.offense_category != 'Gambling Offenses']
 
     # Create Ratio Columns
     train_df['crime_pop_ratio'] = train_df['crime_cnt'] / train_df['population']
@@ -28,12 +31,12 @@ def feature_engineering(train_df, test_df):
     train_df['fire_crime_ratio'] = train_df['fire_cnt'] / train_df['crime_cnt']
 
     # Reduce df to only desired features to train/test model
-    train_df = train_df[['age_num', 'victim_sex', 'offense_category', 'location_id', 'population_description',
+    train_df = train_df[['age_num', 'victim_sex', 'offense_category', 'population_description',
                          'officers', 'civilians', 'crime_pop_ratio', 'beds_pop_ratio', 'beds_crime_ratio',
                          'fire_pop_ratio', 'fire_crime_ratio', 'county']]
 
     # Dummize features
-    train_df = pd.get_dummies(train_df, columns=['victim_sex', 'offense_category', 'location_id', 'population_description'])
+    train_df = pd.get_dummies(train_df, columns=['victim_sex', 'offense_category', 'population_description'])
 
 
     ### TEST_DF ###
@@ -54,12 +57,12 @@ def feature_engineering(train_df, test_df):
     test_df['fire_crime_ratio'] = test_df['fire_cnt'] / test_df['crime_cnt']
 
     # Reduce df to only desired features to train/test model
-    test_df = test_df[['age_num', 'victim_sex', 'offense_category', 'location_id', 'population_description',
+    test_df = test_df[['age_num', 'victim_sex', 'offense_category', 'population_description',
                        'officers', 'civilians', 'crime_pop_ratio', 'beds_pop_ratio', 'beds_crime_ratio',
                        'fire_pop_ratio', 'fire_crime_ratio', 'county']]
 
     # Dummyize features
-    test_df = pd.get_dummies(test_df, columns=['victim_sex', 'offense_category', 'location_id', 'population_description'])
+    test_df = pd.get_dummies(test_df, columns=['victim_sex', 'offense_category', 'population_description'])
 
 
     # # Ensure features match across train and test dataframes
