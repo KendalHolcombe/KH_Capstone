@@ -3,7 +3,7 @@ import psycopg2
 import json
 
 
-def Query_to_DF(train_query):
+def Query_to_DF(train_query, test_query):
     '''
 
     Pass string query in and return a dataframe of query results
@@ -27,6 +27,7 @@ def Query_to_DF(train_query):
 
     # Run queries and return dataframes
     train_df = pd.read_sql(train_query, con=conn)
+    test_df = pd.read_sql(test_query, con=conn)
 
-    return train_df
+    return train_df, test_df
 
