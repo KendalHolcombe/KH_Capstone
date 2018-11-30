@@ -1,7 +1,0 @@
-{
-  "database": "postgres",
-  "user": "postgres",
-  "host": "127.0.0.1",
-  "port": 5432,
-  "passw": "LibertyHill"
-}
