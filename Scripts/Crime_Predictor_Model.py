@@ -11,7 +11,6 @@ class Crime_Model(object):
     def __init__(self, train_query, test_query):
         self.train_query = train_query
         self.test_query = test_query
-        self.columns = None
 
     def get_data(self):
         '''
@@ -19,37 +18,36 @@ class Crime_Model(object):
         Create features set X
         Create targets set y
         '''
-        train_df = Query_to_DF(self.train_query)
+        train_df = Query_to_DF(self.train_query, self.test_query)[0]
         y_train = train_df.pop('county').values
         X_train = train_df
-        self.columns = X.columns
-        test_df = Query_to_DF(self.test_query)
-        test_df = test_df.pop('county')
-        X_test = test_df
+        # test_df = Query_to_DF(self.train_query, self.test_query)[1]
+        # test_df = test_df.pop('county')
+        # X_test = test_df
 
-        return X_train, y_train, X_test
+        return X_train, y_train
 
     def fit(self, X_train, y_train):
         '''
         Fit Random Forest Classifier with training data
         '''
-        self.model = RandomForestClassifier(oob_score=True, n_estimators=500, max_depth=50, max_features='auto')
+        self.model = RandomForestClassifier(oob_score=True, n_estimators=50, max_depth=10, min_samples_split=2)
 
         self.model.fit(X_train, y_train)
 
 
-    def predict_proba(self, X_test):
+    def predict_proba(self, user_data):
         '''
         Returns predicted probabilities for crime to occur in each county
         '''
-        return self.model.predict_proba(X_test)[:, 1]
+        return self.model.predict_proba(user_data)
 
 
-    def predict(self, X_test):
+    def predict(self, user_data):
         '''
-        Returns predicted class for county crime occurred in
+        Returns predicted county crime occurred in
         '''
-        return self.model.predict(X_test)
+        return self.model.predict(user_data)
 
 
 if __name__ == '__main__':
