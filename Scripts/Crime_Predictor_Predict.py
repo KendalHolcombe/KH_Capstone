@@ -1,4 +1,6 @@
 import numpy as np
+import pandas as pd
+import Crime_Predictor_Model
 from Crime_Predictor_Model import Crime_Model
 import pickle
 
@@ -88,4 +90,10 @@ def predictions(user_age, user_sex, user_offense, user_population):
     pred_probs = model.predict_proba(user_test)
     pred_worst = model.predict(user_test)
 
-    return pred_probs, pred_worst
+    # Get top 10 safest counties
+    results_df = pd.DataFrame(pred_probs, columns=model.model.classes_)
+    results_df = results_df.T.sort_values(results_df.index[-1], ascending=True).T
+    safest = results_df.iloc[:,0:10].T
+
+
+    return safest, pred_worst
