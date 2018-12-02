@@ -43,10 +43,9 @@ def feature_engineering(train_df):
     # Bring in census populations
     pop_df['county'] = pop_df['county'].str.upper()
     train_df = pd.merge(train_df, pop_df, how='outer', on=['county', 'year'])
-    train_df['population_description'] = pd.cut(train_df['population'],
-                                        [0, 10000, 50000, 100000, 500000, 1000000, 10000000],
-                                        labels=['Under 10,000', '10,000 - 49,999', '50,000 - 99,999', '100,000 - 499,999',
-                                                '500,000 - 1,000,000', 'Over 1 million'])
+    train_df['population_description'] = pd.cut(train_df['population'], [0, 10000, 100000, 500000, 10000000],
+                                                labels=['Under 10,000', '10,000 - 99,999', '100,000 - 499,999',
+                                                        'Over 500,000'])
 
 
     # Drop NA in incident id column (<2%)

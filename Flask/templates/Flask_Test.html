@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crime Prediction</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/crime.css">
+</head>
+<body>
+<div class="container">
+  <form id="form" action="/" method="POST">
+  <div> Select Your Age Group:      
+    <select id= "age_select" name="Age">
+    	<option value="Select">Select</option>
+    	<option value="5">5</option>
+    	<option value="15">15</option>
+    	<option value="25">25</option>
+    	<option value="35">35</option>
+    	<option value="45">45</option>
+    </select>
+  </div>
+  <b/r>
+  <div> Select Your Gender:      
+    <select id="gender_select" name="Gender">
+    	<option value="Select">Select</option>
+    	<option value="Male">Male</option>
+    	<option value="Female">Female</option>
+    </select>
+  </div>
+  <br/>
+    <input type="submit" value="Submit">
+  <br/>
+  <div>Selected Gender: {{ gender }}</div>
+  <div>Selected Age: {{ age }}</div>
+</div>
+</form>
+</body>
+</html>
