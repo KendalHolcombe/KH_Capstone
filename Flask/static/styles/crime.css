@@ -1,4 +1,42 @@
+body {
+  display: inline-flex;
+  background-color: #E3DFDF;
+}
+
+h1 {
+  text-align: center;
+}
+
 .container {
-  font: Ariel;
+  font-family: sans-serif;
   font-size: large;
+  border: black;
+  border-style: solid;
+  width: 637px;
+  background-color: #F7F7F7;
+}
+
+.selectLabel {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.submitButton {
+  height: 50px;
+  width: 100px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top: 30px;
+}
+
+.selectBox {
+  height: 21px;
+  width: 75px;
+}
+
+.ouputText {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-top: 20px;
 }

@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from Crime_Predictor_Model import *
+import Crime_Predictor_Model
 from Crime_Predictor_Model import Crime_Model
 import pickle
 
@@ -96,3 +96,6 @@ def predictions(user_age, user_sex, user_offense, user_population):
 
 
     return safest, pred_worst
+
+
+
