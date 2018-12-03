@@ -95,7 +95,7 @@ def predictions(user_age, user_sex, user_offense, user_population):
     safest = results_df.iloc[:,0:10].T
 
 
-    return safest, pred_worst
+    return safest.reset_index().values, pred_worst
 
 
 

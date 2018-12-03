@@ -64,11 +64,12 @@
   <div class="ouputText">Selected Crime Category: {{ crime }}</div>
   <div class="ouputText">Selected Population Range: {{ pop }}</div>
   <div class="ouputText" style="background-color:#C40B0B">Avoid This County: {{ worstCounty }}</div>
-  <div class="ouputText" style="background-color:#267205">Consider One Of These Counties:
-    {% for key,value in bestCounties.iterrows() %}
-      <p style="margin-left:30px">{{ key }} Prob: {{ value['Probability'] }}></p>
-    {% endfor %}
-  </div> 
+  <div class="ouputText" style="background-color:#267205">Consider One of These Counties:
+        {% for county in bestCounties %}
+            <p style="margin-left:30px">{{ county }}</p>
+        {% endfor %}
+  </div>
+
 </div>
 </form>
 </body>
