@@ -49,22 +49,18 @@
   <div class="selectLabel"> Select Your Population Range:
     <select id="option4_select" name="Pop">
     	<option value="Select">Select</option>
-    	<option value="Under 25,000">Rural</option>
-    	<option value="25,000 - 99,999">Suburban</option>
-        <option value="100,000 - 499,999">Urban</option>
-        <option value="Over 500,000">Metro</option>
+    	<option value="Under 10,000" data-label="rural">Rural (Under 10,000)</option>
+        <option value="10,000 - 99,999" data-label="suburban">Suburban (10,000 - 99,999)</option>
+        <option value="100,000 - 499,999" data-label="urban">Urban (100,000 - 499,999)</option>
+        <option value="Over 500,000" data-label="metro">Metro (Over 500,000)</option>
     </select>
   </div>
     <input type="submit" value="Submit" class="submitButton">
 </div>
 <div class="container">
   <h1>OUTPUT</h1>
-  <div class="ouputText">Selected Gender: {{ gender }}</div>
-  <div class="ouputText">Selected Age: {{ age }}</div> 
-  <div class="ouputText">Selected Crime Category: {{ crime }}</div>
-  <div class="ouputText">Selected Population Range: {{ pop }}</div>
-  <div class="ouputText" style="background-color:#C40B0B">Avoid This County: {{ worstCounty }}</div>
-  <div class="ouputText" style="background-color:#267205">Consider One of These Counties:
+  <div class="ouputText" style="background-color:rgba(200, 40, 40, 0.9)">Avoid This County: {{ worstCounty }}</div>
+  <div class="ouputText" style="background-color:rgba(18, 111, 4, 0.8)">Consider One of These Counties:
         {% for county in bestCounties %}
             <p style="margin-left:30px">{{ county }}</p>
         {% endfor %}
